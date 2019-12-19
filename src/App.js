@@ -9,7 +9,8 @@ class App extends React.Component {
     shuffled: [],
     clicked: [],
     topScore: 0,
-    score: 0
+    score: 0,
+    message: "Click on each crab only once to earn points!"
   }
 
   //displays shuffled images on initial load
@@ -54,15 +55,21 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <InfoBar />
+        <InfoBar
+          score={this.state.score}
+          topScore={this.state.topScore}
+          message={this.state.message}
+        />
         <div className="container imgcontainer">
-          {this.state.shuffled.map(img => (
-            <ImgCard
-              onClick={this.handleClick}
-              key={img}
-              src={img}
-            />
-          ))}
+          <div className="row">
+            {this.state.shuffled.map(img => (
+              <ImgCard
+                onClick={this.handleClick}
+                key={img}
+                src={img}
+              />
+            ))}
+          </div>
         </div>
       </>
     );

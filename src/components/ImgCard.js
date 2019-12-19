@@ -4,7 +4,9 @@ function ImgCard(props) {
     const url = "assets/click_images/" + props.src;
     return (
 
-        <img className="clickImage col-3" src={url} alt={props.src} />
+        <div className="col-4">
+            <img className="clickImage" src={url} alt={props.src} />
+        </div>
 
     );
 }
