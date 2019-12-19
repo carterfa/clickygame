@@ -1,18 +1,29 @@
 import React from 'react';
 import './App.css';
 import ImgCard from './components/ImgCard';
+import InfoBar from './components/InfoBar'
 
 class App extends React.Component {
 
   state = {
     shuffled: [],
-    clicked: []
+    clicked: [],
+    topScore: 0,
+    score: 0
   }
 
-  componentDidMount() {
+  //displays shuffled images on initial load
+  componentDidMount = () => {
     this.shuffle();
   }
 
+  //records image clicked
+  handleClick = () => {
+
+    console.log("click");
+  }
+
+  //shuffles images
   shuffle = () => {
     const images = ["blue-crab.jpg",
       "caribbean-hermit-crab.jpg",
@@ -39,16 +50,21 @@ class App extends React.Component {
 
   }
 
+  //renders images
   render() {
     return (
-      <div className="container">
-        {this.state.shuffled.map(img => (
-          <ImgCard
-            key={img}
-            src={img}
-          />
-        ))}
-      </div>
+      <>
+        <InfoBar />
+        <div className="container imgcontainer">
+          {this.state.shuffled.map(img => (
+            <ImgCard
+              onClick={this.handleClick}
+              key={img}
+              src={img}
+            />
+          ))}
+        </div>
+      </>
     );
   }
 };

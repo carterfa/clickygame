@@ -1,0 +1,17 @@
+.clickImage{
+    margin-bottom: 2em;
+}
+
+.infoBar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1071;
+    padding: 0 1em;
+    margin-bottom: 1em;
+    text-align:center;
+}
+
+p{
+    display: inline;
+}
