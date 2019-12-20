@@ -10,7 +10,8 @@ class App extends React.Component {
     clicked: [],
     topScore: 0,
     score: 0,
-    message: "Click on each crab only once to earn points!"
+    message: "Click on each crab only once to earn points!",
+    color: { background: "#0f4b71" }
   }
 
   //displays shuffled images on initial load
@@ -24,6 +25,7 @@ class App extends React.Component {
     let clicked = this.state.clicked;
     let topScore = this.state.topScore;
     let score = this.state.score;
+    let color = this.state.color;
     let message = "";
 
     //Adds number to array
@@ -31,10 +33,12 @@ class App extends React.Component {
       score++;
       clicked = [...clicked, num]
       message = "Correct! Keep going!"
+      color = { background: "#0f4b71" };
 
     } else {
       message = "Game over! Try again!";
       score = 0;
+      color = { background: "red" };
       clicked = [];
     };
 
@@ -44,9 +48,12 @@ class App extends React.Component {
 
     if (score === this.state.shuffled.length) {
       message = "Congratulations! All crabs clicked!"
+      color = { background: "green" };
+      clicked = [];
+      score = 0;
     }
 
-    this.setState({ clicked: clicked, score: score, topScore: topScore, message: message })
+    this.setState({ clicked: clicked, score: score, topScore: topScore, message: message, color: color })
     this.shuffle();
   }
 
@@ -121,6 +128,7 @@ class App extends React.Component {
           score={this.state.score}
           topScore={this.state.topScore}
           message={this.state.message}
+          color={this.state.color}
         />
         <div className="container imgcontainer">
           <div className="row">

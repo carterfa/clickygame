@@ -4,7 +4,7 @@ function InfoBar(props) {
 
     return (
 
-        <header className="infoBar">
+        <header className="infoBar" style={props.color}>
             <h1>Clicky Crab</h1>
             <p>{props.message}</p>
             <div>
