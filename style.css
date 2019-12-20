@@ -1,0 +1,10 @@
+body{
+    background-image: url(assets/white-sand-texture.jpg);
+    background-color: whitesmoke;
+}
+
+.clickImage{
+
+    border: 2px solid white;
+
+}
