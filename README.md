@@ -6,7 +6,5 @@ The user must click on each image only once. The score increases with each corre
 
 [Deployed Link](https://carterfa.github.io/clicky-crab/)
 
-[Given Instructions](homework_instructions.md)
-
 This project used [Create React App](https://github.com/facebook/create-react-app).
 
