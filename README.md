@@ -1,4 +1,4 @@
-### Clicky Crab
+## Clicky Crab
 
 ![Screenshot](./screenshots/clickycrab.jpg)
 
